@@ -1,8 +1,20 @@
 #! /bin/sh
 
-stripcommand="$1"
+all="$@"
 
-"$stripcommand" "$@" || exit $?
+# more workaround for newer automakes, we need to actually test program as
+# the command for coverage to work, so we try to discover it by walking
+# through all the args
+while [ "$1" != "" ] ; do
+  case $1 in
+    ./*)
+      stripcommand="$1"
+      ;;
+  esac
+  shift
+done
+
+$all || exit $?
 
 if test "x@FW_ENABLE_COVERAGE@" = "x1"; then
   # linux: 97.67% of 86 lines executed in file ../src/flass.h

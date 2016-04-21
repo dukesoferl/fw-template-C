@@ -96,6 +96,8 @@ for dir in src tests
         '*.lo'                                                  \
         '.deps'                                                 \
         '.libs'                                                 \
+        '*.log'                                                 \
+        '*.trs'                                                 \
     ) || fatal "C/init"
   done
 

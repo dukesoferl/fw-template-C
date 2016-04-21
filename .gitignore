@@ -22,3 +22,4 @@ fw-pkgtmp
 install-sh
 ltmain.sh
 missing
+test-driver

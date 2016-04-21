@@ -2,3 +2,6 @@
 
 # travis uses 'make test' instead of 'make check'
 test: check
+
+maintainer-clean-local::
+	rm -f test-driver
